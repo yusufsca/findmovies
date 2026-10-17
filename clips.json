@@ -19,5 +19,40 @@
     "file": "spiderman.mp4",
     "start": 0,
     "end": 20
+  },
+  {
+    "file": "despicableme.mp4",
+    "start": 0,
+    "end": 20
+  },
+  {
+    "file": "iceage.mp4",
+    "start": 0,
+    "end": 20
+  },
+  {
+    "file": "lalaland.mp4",
+    "start": 0,
+    "end": 20
+  },
+  {
+    "file": "nowyouseeme.mp4",
+    "start": 0,
+    "end": 20
+  },
+  {
+    "file": "lucy.mp4",
+    "start": 0,
+    "end": 20
+  },
+  {
+    "file": "venom.mp4",
+    "start": 0,
+    "end": 20
+  },
+  {
+    "file": "ghostrider.mp4",
+    "start": 0,
+    "end": 20
   }
 ]
