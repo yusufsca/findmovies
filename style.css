@@ -1,0 +1,151 @@
+/* Pastel palet */
+:root{
+  --bg:#FFF6F0; --card:#FFFFFF; --line:#F2E6EC; --text:#3A3150; --muted:#8B819F;
+  --peach:#FFD6B8; --coral:#FF9AA2; --salmon:#FFB3A7; --pink:#F7A6CB; --lav:#D9C8F5;
+  --teal:#8EDAD3; --sky:#9CCDF2; --mint:#BFEBCB;
+  --peach-d:#F5B98C; --pink-d:#EE86B4; --teal-d:#5FC4BB; --lav-d:#B497E3;
+  --t0:#FF9AA2; --t1:#7FD4CF;
+  --shadow:0 6px 18px rgba(176,140,200,.14);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{background:linear-gradient(180deg,#FFF1E8 0%,#F8EDFF 55%,#E9F7F5 100%);background-attachment:fixed}
+[data-team="0"]{--team:var(--t0)} [data-team="1"]{--team:var(--t1)}
+.hidden{display:none!important}
+.screen{min-height:100vh;padding:20px 16px calc(28px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto}
+.screen.center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px}
+
+/* ---- Ana menü ---- */
+.brand{text-align:center;margin:6px 0 18px}
+.small-brand{margin-top:0}
+.emoji-row span{display:inline-block;font-size:2.1rem;margin:0 6px;animation:bob 2.2s ease-in-out infinite}
+.emoji-row span:nth-child(2){animation-delay:.3s}
+.emoji-row span:nth-child(3){animation-delay:.6s}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
+.brand-top{display:block;letter-spacing:.35em;font-size:.75rem;color:#E9728A;font-weight:700;margin-top:6px}
+h1{margin:4px 0;font-size:2.2rem;line-height:1.1;
+  background:linear-gradient(90deg,#F0788C,#B497E3,#5FC4BB,#F0788C);background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+h2{font-size:1.8rem;margin:0}
+h3{margin:0 0 10px;font-size:1.02rem}
+.tagline,.muted{color:var(--muted);font-size:.9rem;margin:4px 0}
+.small{font-size:.8rem}
+.hint{color:var(--muted);line-height:1.5}
+.big-emoji{font-size:3.4rem;line-height:1}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.clip-count{display:flex;align-items:baseline;gap:8px}
+.clip-count b{font-size:2.6rem;color:#EE86B4;line-height:1}
+.clip-count span{color:var(--muted)}
+.scenes .muted{margin-top:6px}
+
+input[type=text]{width:100%;background:#FFF9F6;color:var(--text);border:2px solid var(--line);
+  border-radius:14px;padding:12px 14px;font-size:1.05rem;font-weight:600;font-family:inherit}
+input[type=text]:focus{outline:none;border-color:var(--team,var(--lav-d))}
+.team-row{display:flex;align-items:center;gap:10px}
+.team-row .dot{flex:none;width:18px;height:18px;border-radius:50%;background:var(--team)}
+.vs{text-align:center;font-weight:800;font-size:.8rem;letter-spacing:.2em;color:var(--muted);margin:8px 0}
+
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;
+  border-bottom:1px solid var(--line);font-size:.97rem}
+.row:last-child{border-bottom:0;padding-bottom:0}
+.stepper{display:inline-flex;align-items:center;gap:8px}
+.stepper output{min-width:58px;text-align:center;font-weight:800}
+.step-btn{width:38px;height:38px;border-radius:50%;border:0;background:#EFE4FB;color:var(--text);font-size:1.25rem;line-height:1;cursor:pointer}
+.step-btn:active{transform:scale(.9)}
+
+.btn{border:0;border-radius:16px;padding:14px 18px;font-size:1.05rem;font-weight:700;color:var(--text);
+  cursor:pointer;font-family:inherit;transition:transform .08s}
+.btn:active{transform:scale(.96)}
+.btn.primary{background:linear-gradient(135deg,#FFB9A8,#F7A6CB 55%,#CDB6F2);box-shadow:0 8px 20px rgba(247,166,203,.45)}
+.btn.soft{background:#fff;border:2px solid var(--lav);margin-top:10px}
+.btn.big{width:100%;padding:18px;font-size:1.2rem}
+.btn.link{background:none;color:var(--muted);font-weight:600;font-size:.95rem;padding:10px}
+.btn.back{padding:6px 0;text-align:left}
+.pulse{animation:glow 2s infinite}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(247,166,203,.65)}70%{box-shadow:0 0 0 14px rgba(247,166,203,0)}100%{box-shadow:0 0 0 0 rgba(247,166,203,0)}}
+
+/* ---- Kurallar ---- */
+.steps{margin:0;padding-left:20px;line-height:1.55;font-size:.95rem}
+.steps li{margin-bottom:6px}
+.rule{display:flex;gap:12px;border-left:7px solid var(--c)}
+.rule .ico{font-size:1.9rem;line-height:1.1}
+.rule h3{margin-bottom:6px}
+.rule p{margin:0 0 8px;font-size:.93rem;line-height:1.5}
+.ex{border-radius:12px;padding:8px 11px;font-size:.88rem;margin-top:6px;line-height:1.4}
+.ex.bad{background:#FFE7E4} .ex.good{background:#E1F5E8}
+.score-rules{display:flex;gap:8px;margin-bottom:10px}
+.sr{flex:1;border-radius:14px;padding:10px 6px;text-align:center;display:flex;flex-direction:column;gap:4px;font-size:.85rem}
+.sr b{font-size:.9rem} .sr span{font-weight:800;font-size:1.05rem}
+.sr.ok{background:var(--mint)} .sr.pass{background:var(--lav)} .sr.foul{background:var(--salmon)}
+
+/* ---- Hazır / tur sonu / final ---- */
+.team-badge{display:inline-block;background:var(--team);padding:8px 22px;border-radius:999px;font-size:1.7rem}
+.scorebar,.stat-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.score-chip{background:#fff;border:2px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.92rem;display:flex;align-items:center;gap:8px}
+.score-chip i{width:12px;height:12px;border-radius:50%;background:var(--team)}
+.score-chip.now{border-color:var(--team)}
+.score-chip b{font-size:1.05rem}
+.stat{border-radius:16px;padding:10px 16px;font-weight:700;font-size:1rem;min-width:84px}
+.stat b{display:block;font-size:2rem;line-height:1.1}
+.stat.ok{background:var(--mint)} .stat.pass{background:var(--lav)} .stat.foul{background:var(--salmon)}
+.ranking{width:100%;padding:0;list-style:none;counter-reset:r}
+.ranking li{counter-increment:r;display:flex;align-items:center;gap:10px;background:#fff;
+  border:2px solid var(--line);border-radius:16px;padding:14px;margin-bottom:8px;font-size:1.15rem;box-shadow:var(--shadow)}
+.ranking li::before{content:counter(r);color:#EE86B4;font-weight:800}
+.ranking li i{width:14px;height:14px;border-radius:50%;background:var(--team);flex:none}
+.ranking li span{flex:1;text-align:left;font-weight:700}
+.ranking li.win{border-color:#FFD98E;background:#FFF6DC}
+
+/* ---- Oyun ---- */
+#game{position:fixed;inset:0;max-width:none;min-height:0;padding:0;margin:0;background:#000;z-index:1}
+#video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+.hud{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;
+  padding:calc(10px + env(safe-area-inset-top)) 12px calc(12px + env(safe-area-inset-bottom))}
+.hud button{pointer-events:auto}
+.hud-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.82);color:var(--text);
+  font-size:1rem;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.hud-head{display:flex;flex-direction:column;gap:8px}
+.timer-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.info-row{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px 8px}
+.clip-title{align-self:flex-start;max-width:100%;min-width:0;padding:7px 14px;border-radius:16px;
+  background:linear-gradient(135deg,#FFD6B8,#F7A6CB);color:var(--text);font-weight:800;font-size:1rem;line-height:1.25;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);overflow:hidden;overflow-wrap:anywhere;
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}
+.clip-title:empty{display:none}
+.pill{background:rgba(255,255,255,.88);color:var(--text);border-radius:999px;padding:6px 14px;font-weight:800;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.pill.timer{font-size:1.5rem;min-width:84px;text-align:center}
+.pill.timer.low{background:var(--coral);animation:pulse .6s infinite alternate}
+@keyframes pulse{to{transform:scale(1.08)}}
+.meta{font-size:.78rem;font-weight:700;background:rgba(255,255,255,.85);color:var(--text);padding:4px 12px 4px 10px;border-radius:999px;
+  white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;border-left:8px solid var(--team,var(--lav));margin-left:auto}
+.banned{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:90vw}
+.banned span{background:rgba(255,179,167,.95);color:#5A2230;border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:800}
+.toast{position:absolute;top:42%;left:50%;transform:translateX(-50%);max-width:90%;white-space:nowrap;
+  padding:10px 20px;border-radius:16px;font-weight:800;font-size:1.1rem;text-align:center;pointer-events:none;color:var(--text);
+  box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.toast.ok{background:var(--mint)} .toast.pass{background:var(--lav)} .toast.foul{background:var(--salmon)}
+.actions{display:flex;gap:10px}
+.gbtn{flex:1 1 0;min-width:0;height:62px;border-radius:20px;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-size:1rem;font-weight:800;font-family:inherit;color:var(--text);cursor:pointer;transition:transform .08s;
+  box-shadow:0 4px 14px rgba(0,0,0,.28)}
+.gbtn small{font-size:.74rem;font-weight:700;opacity:.7}
+.gbtn:active{transform:scale(.94)}
+.gbtn.foul{background:var(--salmon)} .gbtn.pass{background:var(--lav)} .gbtn.ok{background:var(--mint)}
+.timebar{height:6px;margin-top:12px;background:rgba(255,255,255,.35);border-radius:6px;overflow:hidden}
+#timebar{height:100%;width:100%;background:linear-gradient(90deg,var(--peach),var(--pink),var(--lav));transition:width .25s linear}
+.overlay{position:absolute;inset:0;background:rgba(255,246,240,.97);color:var(--text);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:16px;z-index:5;padding:0 24px}
+.overlay .btn.big{max-width:360px}
+.video-error{position:absolute;left:50%;top:30%;transform:translateX(-50%);width:min(88vw,380px);padding:16px;border-radius:20px;
+  background:#fff;color:var(--text);text-align:center;font-weight:700;font-size:.92rem;line-height:1.5;white-space:pre-line;
+  overflow-wrap:anywhere;box-shadow:0 8px 24px rgba(0,0,0,.4);pointer-events:none}
+.row small{color:var(--muted);font-size:.78rem;font-weight:400}
+
+/* ---- Konfeti ---- */
+#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+#confetti span{position:absolute;top:-40px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(115vh) rotate(360deg)}}
