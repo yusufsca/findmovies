@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFF1E8">
+<title>Duspeakingclub Movies Challenge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<!-- ANA MENÜ -->
+<section id="setup" class="screen">
+  <header class="brand">
+    <div class="emoji-row"><span>🎬</span><span>🍿</span><span>🎭</span></div>
+    <span class="brand-top">DUSPEAKINGCLUB</span>
+    <h1>Movies Challenge</h1>
+    <p class="tagline">Sessiz sahneyi izle, İngilizce anlat, takımın bulsun!</p>
+  </header>
+
+  <div class="card">
+    <h3>👯 Takımlar</h3>
+    <div class="team-row" data-team="0"><i class="dot"></i><input type="text" id="team0" maxlength="18" placeholder="Takım 1" autocomplete="off"></div>
+    <div class="vs">VS</div>
+    <div class="team-row" data-team="1"><i class="dot"></i><input type="text" id="team1" maxlength="18" placeholder="Takım 2" autocomplete="off"></div>
+  </div>
+
+  <div class="card">
+    <h3>⚙️ Oyun ayarları</h3>
+    <div class="row"><span>⏱️ Tur süresi</span><div class="stepper" data-key="duration" data-min="10" data-max="300" data-step="5" data-unit=" sn"></div></div>
+    <div class="row"><span>✅ Bildi puanı</span><div class="stepper" data-key="points" data-min="1" data-max="10" data-step="1" data-sign="+"></div></div>
+    <div class="row"><span>⏭️ Pas cezası</span><div class="stepper" data-key="penalty" data-min="0" data-max="10" data-step="1" data-sign="−"></div></div>
+    <div class="row"><span>⚠️ İhlal cezası</span><div class="stepper" data-key="foul" data-min="0" data-max="10" data-step="1" data-sign="−"></div></div>
+  </div>
+
+  <div class="card scenes">
+    <div class="clip-count"><b id="clipNum">0</b><span>sahne hazır</span></div>
+    <p id="clipInfo" class="muted small"></p>
+  </div>
+
+  <button id="startGame" class="btn primary big pulse">🎬 Oyunu Başlat</button>
+  <button id="rulesBtn" class="btn soft big">📜 Kurallar</button>
+</section>
+
+<!-- KURALLAR -->
+<section id="rules" class="screen hidden">
+  <button id="rulesBack" class="btn link back">← Geri</button>
+  <header class="brand small-brand">
+    <div class="big-emoji">📜</div>
+    <h2>Kurallar</h2>
+    <p class="tagline">Tabu mantığı: gördüğünü anlat, ama yasakları söyleme.</p>
+  </header>
+
+  <div class="card">
+    <h3>🎮 Nasıl oynanır?</h3>
+    <ol class="steps">
+      <li>İki takım oynar. Sırası gelen takımdan biri telefonu alır ve ekranı kimseye <b>göstermez</b>.</li>
+      <li>Sessiz sahne oynar. Anlatan, gördüğünü <b>İngilizce</b> betimler; takım hangi film/dizi olduğunu bulmaya çalışır. Sahnenin adı ekranın sol üstünde yazar, onu sadece anlatan görür.</li>
+      <li>Bulunursa <b>Bildi ✓</b>, bulunamazsa <b>Pas ⏭</b>, kural bozulursa <b>İhlal ⚠️</b> butonuna basılır.</li>
+      <li>Süre dolunca telefon <b>diğer takıma</b> geçer. Yarım kalan sahne havuza geri döner.</li>
+      <li>Sahneler rastgele gelir, her sahne oyunda <b>yalnızca bir kez</b> çıkar. Sahneler bitince oyun biter ve en çok puan alan takım kazanır.</li>
+    </ol>
+  </div>
+
+  <div class="card rule" style="--c:var(--peach-d)">
+    <div class="ico">🚫</div>
+    <div>
+      <h3>Karakter ve film/dizi adı yasak</h3>
+      <p>Anlatan kişi “He is Spider-Man” ya da “This is Marvel” diyemez. Sadece ne gördüğünü betimlemek zorundadır.</p>
+      <div class="ex bad">❌ He is Spider-Man.</div>
+      <div class="ex good">✅ A guy in a red suit is jumping between buildings.</div>
+    </div>
+  </div>
+
+  <div class="card rule" style="--c:var(--pink-d)">
+    <div class="ico">🎭</div>
+    <div>
+      <h3>Oyuncu / aktör adı yasak</h3>
+      <p>Hiçbir oyuncunun veya aktörün adı söylenemez.</p>
+      <div class="ex bad">❌ Tom Holland is fighting.</div>
+      <div class="ex good">✅ A young man is fighting someone on a rooftop.</div>
+    </div>
+  </div>
+
+  <div class="card rule" style="--c:var(--teal-d)">
+    <div class="ico">🗝️</div>
+    <div>
+      <h3>Anahtar kelime yasağı</h3>
+      <p>Sahnede çok belirgin bir nesne varsa onun adı söylenemez, başka sözlerle tarif edilir. Bazı sahnelerde yasaklı kelimeler ekranın üstünde görünür.</p>
+      <div class="ex bad">❌ He is holding a lightsaber.</div>
+      <div class="ex good">✅ He is holding a glowing sword.</div>
+    </div>
+  </div>
+
+  <div class="card rule" style="--c:var(--lav-d)">
+    <div class="ico">🙊</div>
+    <div>
+      <h3>Türkçe kelime ve beden dili yasak</h3>
+      <p>Heyecanla tek bir Türkçe kelime kaçırırsan ya da el-kol hareketiyle ipucu verirsen sahne <b>iptal edilir</b>. Takım arkadaşları <b>İhlal ⚠️</b> butonuna basar, ceza puanı yazılır.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>⭐ Puanlama</h3>
+    <div class="score-rules">
+      <div class="sr ok"><b>Bildi ✓</b><span id="ruleOk"></span></div>
+      <div class="sr pass"><b>Pas ⏭</b><span id="rulePass"></span></div>
+      <div class="sr foul"><b>İhlal ⚠️</b><span id="ruleFoul"></span></div>
+    </div>
+    <p class="muted small">Puanlar ana menüdeki ayarlardan değişir. İhlalde sahne iptal olur ve sıradaki sahneye geçilir.</p>
+  </div>
+
+  <button id="rulesOk" class="btn primary big">Anladım 👍</button>
+</section>
+
+<!-- HAZIR EKRANI -->
+<section id="ready" class="screen hidden center">
+  <p class="muted" id="readyTurn"></p>
+  <div class="big-emoji">🎤</div>
+  <p class="muted">Sıra</p>
+  <h2 id="readyName" class="team-badge"></h2>
+  <p class="hint">Takımdan biri telefonu alsın, ekranı diğerlerine <b>göstermesin</b>.<br>Gördüğünü İngilizce anlat, takımın bulsun!</p>
+  <div class="scorebar" id="readyScores"></div>
+  <button id="goBtn" class="btn primary big">BAŞLA ▶</button>
+  <button id="readyRules" class="btn link">📜 Kurallar</button>
+  <button id="readyHome" class="btn link">🏠 Ana menü</button>
+</section>
+
+<!-- OYUN -->
+<section id="game" class="screen hidden">
+  <video id="video" muted playsinline autoplay loop disablepictureinpicture controlslist="nodownload noplaybackrate"></video>
+  <div class="hud">
+    <div class="hud-head">
+      <div class="hud-top">
+        <button type="button" id="homeBtn" class="icon-btn" aria-label="Ana menü">🏠</button>
+        <div class="timer-wrap">
+          <div class="pill timer" id="timer">60</div>
+        </div>
+        <button type="button" id="pauseBtn" class="icon-btn" aria-label="Duraklat">⏸</button>
+      </div>
+      <div class="info-row">
+        <div class="clip-title" id="clipTitle"></div>
+        <div class="meta" id="hudMeta"></div>
+      </div>
+      <div class="banned hidden" id="banned"></div>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+    <div class="hud-bottom">
+      <div class="actions">
+        <button type="button" id="foulBtn" class="gbtn foul"><span>İhlal ⚠️</span><small id="foulHint"></small></button>
+        <button type="button" id="passBtn" class="gbtn pass"><span>Pas ⏭</span><small id="passHint"></small></button>
+        <button type="button" id="nextBtn" class="gbtn ok"><span>Bildi ✓</span><small id="okHint"></small></button>
+      </div>
+      <div class="timebar"><div id="timebar"></div></div>
+    </div>
+  </div>
+  <div id="pauseOverlay" class="overlay hidden">
+    <h2>⏸ Duraklatıldı</h2>
+    <button id="resumeBtn" class="btn primary big">Devam</button>
+    <button id="pauseHome" class="btn link">🏠 Ana menüye dön</button>
+  </div>
+</section>
+
+<!-- TUR SONU -->
+<section id="round" class="screen hidden center">
+  <div class="big-emoji" id="roundEmoji">⏰</div>
+  <h2 id="roundTitle"></h2>
+  <p class="muted" id="roundWho"></p>
+  <div class="stat-row" id="roundStats"></div>
+  <div class="scorebar" id="roundScores"></div>
+  <button id="nextTeamBtn" class="btn primary big">Sıradaki ▶</button>
+  <button id="finishBtn" class="btn link">🏁 Oyunu bitir</button>
+</section>
+
+<!-- FİNAL -->
+<section id="final" class="screen hidden center">
+  <div class="big-emoji">🏆</div>
+  <h2 id="finalTitle">Oyun bitti!</h2>
+  <p class="muted" id="finalStats"></p>
+  <ol id="ranking" class="ranking"></ol>
+  <button id="againBtn" class="btn primary big">🔁 Yeniden oyna</button>
+  <button id="backBtn" class="btn soft big">🏠 Ana menü</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
