@@ -2,57 +2,109 @@
   
   {
     "file": "dominik.mp4",
-    "start": 0,
-    "end": 20
+
   },
   {
     "file": "fastandfurious.mp4",
-    "start": 0,
-    "end": 20
+   
   },
   {
     "file": "jurassicworld.mp4",
-    "start": 0,
-    "end": 20
+ 
   },
   {
     "file": "spiderman.mp4",
-    "start": 0,
-    "end": 20
+
   },
   {
     "file": "despicableme.mp4",
-    "start": 0,
-    "end": 20
+  
   },
   {
     "file": "iceage.mp4",
-    "start": 0,
-    "end": 20
+    
   },
   {
     "file": "lalaland.mp4",
-    "start": 0,
-    "end": 20
+   
   },
   {
     "file": "nowyouseeme.mp4",
-    "start": 0,
-    "end": 20
+   
   },
   {
     "file": "lucy.mp4",
-    "start": 0,
-    "end": 20
+  
   },
   {
     "file": "venom.mp4",
-    "start": 0,
-    "end": 20
+    
   },
   {
     "file": "ghostrider.mp4",
-    "start": 0,
-    "end": 20
+  
+  },
+  {
+    "file": "nemo.mp4"
+  },
+  {
+    "file": "cars.mp4"
+  },
+  {
+    "file": "ratatuy.mp4"
+  },
+  {
+    "file": "nemo.mp4"
+  },
+  {
+    "file": "cars.mp4"
+  },
+  {
+    "file": "ratatuy.mp4"
+  },
+  {
+    "file": "missionimposible.mp4"
+  },
+  {
+    "file": "rocky.mp4"
+  },
+  {
+    "file": "shinnig-cinnet.mp4"
+  },
+  {
+    "file": "harrypotter.mp4"
+  },
+  {
+    "file": "starwars.mp4"
+  },
+  {
+    "file": "titanic.mp4"
+  },
+  {
+    "file": "ı-robot.mp4"
+  },
+  {
+    "file": "matrix.mp4"
+  },
+  {
+    "file": "superman-manofsteel.mp4"
+  },
+  {
+    "file": "batman.mp4"
+  },
+  {
+    "file": "ayla.mp4"
+  },
+  {
+    "file": "toystory.mp4"
+  },
+  {
+    "file": "interstellar.mp4"
+  },
+  {
+    "file": "howtotrainyourdragon.mp4"
+  },
+  {
+    "file": "karatekid.mp4"
   }
 ]
